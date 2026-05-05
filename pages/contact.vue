@@ -2,135 +2,163 @@
   <div>
     <!-- Contact Header -->
     <UPageHero class="relative isolate overflow-hidden bg-primary-700 md:min-h-125"
-      title="Get Started with Federal Contracting"
-      description="Ready to navigate the federal contracting landscape? Schedule a consultation to discuss your business goals and learn how we can help you succeed."
-      :ui="{
-        title: 'text-4xl sm:text-5xl md:text-6xl font-bold text-white',
-        description: 'text-sm sm:text-lg text-primary-100 max-w-3xl mx-auto'
-      }">
-      <NuxtImg src="/monument-1.png" alt="Team collaborating around a conference table"
-        class="absolute inset-0 -z-10 size-full object-cover brightness-[0.2]" />
+               title="Get Started with Federal Contracting"
+               description="Ready to navigate the federal contracting landscape? Schedule a consultation to discuss your business goals and learn how we can help you succeed."
+               :ui="{
+                title: 'text-4xl sm:text-5xl md:text-6xl font-bold text-white',
+                description: 'text-sm sm:text-lg text-primary-100 max-w-3xl mx-auto'
+              }">
+      <NuxtImg src="/monument-1.png"
+               alt="Team collaborating around a conference table"
+               class="absolute inset-0 -z-10 size-full object-cover brightness-[0.2]" />
       <div class="absolute inset-0 bg-primary-700/40 -z-10"></div>
     </UPageHero>
 
+    <div class="mx-auto text-center pt-8 md:pt-16 -mb-8 bg-white">
+      <h2 class="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+        Schedule an appointment with us directly!
+      </h2>
+      <!-- Calendly inline widget begin -->
+      <ClientOnly>
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/truenorthfederalsolutions/30min"
+             style="min-width:320px;height:700px;">
+        </div>
+        <template #fallback>
+          <div style="min-width:320px;height:700px;"
+               class="flex items-center justify-center text-gray-500">
+            Loading scheduler…
+          </div>
+        </template>
+      </ClientOnly>
+      <!-- Calendly inline widget end -->
+    </div>
+
     <!-- Contact Form Section -->
-    <UPageSection class="bg-white" :ui="{
-      container: 'max-w-6xl'
-    }">
+    <UPageSection class="bg-white"
+                  :ui="{
+                    container: 'max-w-6xl'
+                  }">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Contact Form -->
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold text-secondary-900 mb-6">
-            Schedule Your Consultation
+            Contact Us About Your Federal Contracting Needs
           </h2>
-          <UForm :schema="contactSchema" :state="contactForm" class="space-y-5" @submit="onSubmit">
+          <UForm :schema="contactSchema"
+                 :state="contactForm"
+                 class="space-y-5"
+                 @submit="onSubmit">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <UFormField label="First Name" name="firstName" required :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
+              <UFormField label="First Name"
+                          name="firstName"
+                          required
+                          :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
                 <template #default="{ error }">
-                  <UInput 
-                    v-model="contactForm.firstName" 
-                    placeholder="John" 
-                    size="lg"
-                    :color="error ? 'error' : 'primary'"
-                    variant="outline"
-                    class="w-full"
-                  />
+                  <UInput v-model="contactForm.firstName"
+                          placeholder="John"
+                          size="lg"
+                          :color="error ? 'error' : 'primary'"
+                          variant="outline"
+                          class="w-full" />
                 </template>
               </UFormField>
-              <UFormField label="Last Name" name="lastName" required :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
+              <UFormField label="Last Name"
+                          name="lastName"
+                          required
+                          :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
                 <template #default="{ error }">
-                  <UInput 
-                    v-model="contactForm.lastName" 
-                    placeholder="Doe" 
-                    size="lg"
-                    :color="error ? 'error' : 'primary'"
-                    variant="outline"
-                    class="w-full"
-                  />
+                  <UInput v-model="contactForm.lastName"
+                          placeholder="Doe"
+                          size="lg"
+                          :color="error ? 'error' : 'primary'"
+                          variant="outline"
+                          class="w-full" />
                 </template>
               </UFormField>
             </div>
 
-            <UFormField label="Email Address" name="email" required :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
+            <UFormField label="Email Address"
+                        name="email"
+                        required
+                        :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
               <template #default="{ error }">
-                <UInput 
-                  v-model="contactForm.email" 
-                  type="email" 
-                  placeholder="john@company.com" 
-                  size="lg"
-                  :color="error ? 'error' : 'primary'"
-                  variant="outline"
-                  class="w-full"
-                />
+                <UInput v-model="contactForm.email"
+                        type="email"
+                        placeholder="john@company.com"
+                        size="lg"
+                        :color="error ? 'error' : 'primary'"
+                        variant="outline"
+                        class="w-full" />
               </template>
             </UFormField>
 
-            <UFormField label="Company Name" name="company" required :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
+            <UFormField label="Company Name"
+                        name="company"
+                        required
+                        :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
               <template #default="{ error }">
-                <UInput 
-                  v-model="contactForm.company" 
-                  placeholder="Your Company LLC" 
-                  size="lg"
-                  :color="error ? 'error' : 'primary'"
-                  variant="outline"
-                  class="w-full"
-                />
+                <UInput v-model="contactForm.company"
+                        placeholder="Your Company LLC"
+                        size="lg"
+                        :color="error ? 'error' : 'primary'"
+                        variant="outline"
+                        class="w-full" />
               </template>
             </UFormField>
 
-            <UFormField label="Phone Number" name="phone" :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
-              <UInput 
-                v-model="contactForm.phone" 
-                type="tel" 
-                placeholder="(555) 123-4567" 
-                size="lg"
-                color="primary"
-                variant="outline"
-                class="w-full"
-              />
+            <UFormField label="Phone Number"
+                        name="phone"
+                        :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
+              <UInput v-model="contactForm.phone"
+                      type="tel"
+                      placeholder="(555) 123-4567"
+                      size="lg"
+                      color="primary"
+                      variant="outline"
+                      class="w-full" />
             </UFormField>
 
-            <UFormField label="Primary Interest" name="interest" required :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
+            <UFormField label="Primary Interest"
+                        name="interest"
+                        required
+                        :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
               <template #default="{ error }">
-                <USelect 
-                  v-model="contactForm.interest" 
-                  :items="interestOptions"
-                  size="lg"
-                  placeholder="Select your primary interest..."
-                  :color="error ? 'error' : 'primary'"
-                  variant="outline"
-                  class="w-full"
-                  :ui="{ 
-                    item: 'text-secondary-700 data-highlighted:text-secondary-900 data-highlighted:bg-secondary-100',
-                    itemLabel: 'text-secondary-700'
-                  }"
-                />
+                <USelect v-model="contactForm.interest"
+                         :items="interestOptions"
+                         size="lg"
+                         placeholder="Select your primary interest..."
+                         :color="error ? 'error' : 'primary'"
+                         variant="outline"
+                         class="w-full"
+                         :ui="{
+                          item: 'text-secondary-700 data-highlighted:text-secondary-900 data-highlighted:bg-secondary-100',
+                          itemLabel: 'text-secondary-700'
+                        }" />
               </template>
             </UFormField>
 
-            <UFormField label="Tell us about your goals and challenges" name="message" :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
-              <UTextarea 
-                v-model="contactForm.message" 
-                size="lg"
-                :rows="4"
-                placeholder="Describe your current situation, goals, and how we can help..."
-                color="primary"
-                variant="outline"
-                class="w-full"
-              />
+            <UFormField label="Tell us about your goals and challenges"
+                        name="message"
+                        :ui="{ label: 'text-secondary-700 font-medium', error: 'text-red-500' }">
+              <UTextarea v-model="contactForm.message"
+                         size="lg"
+                         :rows="4"
+                         placeholder="Describe your current situation, goals, and how we can help..."
+                         color="primary"
+                         variant="outline"
+                         class="w-full" />
             </UFormField>
 
-            <UButton 
-              type="submit" 
-              size="lg" 
-              block 
-              color="primary"
-              variant="solid"
-              icon="i-heroicons-calendar-days"
-              :loading="isSubmitting"
-              loading-icon="i-lucide-loader"
-              class="bg-primary-700 text-white hover:bg-primary-800 cursor-pointer py-4"
-            >
+            <UButton type="submit"
+                     size="lg"
+                     block
+                     color="primary"
+                     variant="solid"
+                     icon="i-heroicons-calendar-days"
+                     :loading="isSubmitting"
+                     loading-icon="i-lucide-loader"
+                     class="bg-primary-700 text-white hover:bg-primary-800 cursor-pointer py-4">
               Schedule Consultation
             </UButton>
           </UForm>
@@ -141,59 +169,83 @@
           <h2 class="text-2xl sm:text-3xl font-bold text-secondary-900 mb-6">
             What to Expect
           </h2>
-          
+
           <div class="space-y-6">
-            <UCard variant="subtle" class="bg-secondary-50">
+            <UCard variant="subtle"
+                   class="bg-secondary-50">
               <div class="flex items-start gap-4">
-                <div class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
-                  <UIcon name="i-heroicons-clock" class="w-5 h-5 text-white" />
+                <div
+                     class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-clock"
+                         class="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-secondary-900 mb-1">Response Time</h3>
+                  <h3 class="font-semibold text-secondary-900 mb-1">Response
+                    Time</h3>
                   <p class="text-secondary-600 text-sm">
-                    We respond to all consultation requests within 24 hours during business days.
+                    We respond to all consultation requests within 24 hours
+                    during
+                    business days.
                   </p>
                 </div>
               </div>
             </UCard>
 
-            <UCard variant="subtle" class="bg-secondary-50">
+            <UCard variant="subtle"
+                   class="bg-secondary-50">
               <div class="flex items-start gap-4">
-                <div class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
-                  <UIcon name="i-heroicons-chat-bubble-left-right" class="w-5 h-5 text-white" />
+                <div
+                     class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-chat-bubble-left-right"
+                         class="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-secondary-900 mb-1">Consultation Format</h3>
+                  <h3 class="font-semibold text-secondary-900 mb-1">Consultation
+                    Format
+                  </h3>
                   <p class="text-secondary-600 text-sm">
-                    Initial consultations are conducted via phone or video call and typically last 30-45 minutes.
+                    Initial consultations are conducted via phone or video call
+                    and
+                    typically last 30-45 minutes.
                   </p>
                 </div>
               </div>
             </UCard>
 
-            <UCard variant="subtle" class="bg-secondary-50">
+            <UCard variant="subtle"
+                   class="bg-secondary-50">
               <div class="flex items-start gap-4">
-                <div class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
-                  <UIcon name="i-heroicons-shield-check" class="w-5 h-5 text-white" />
+                <div
+                     class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-shield-check"
+                         class="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-secondary-900 mb-1">Confidentiality</h3>
+                  <h3 class="font-semibold text-secondary-900 mb-1">
+                    Confidentiality</h3>
                   <p class="text-secondary-600 text-sm">
-                    All information shared during consultations is kept strictly confidential.
+                    All information shared during consultations is kept strictly
+                    confidential.
                   </p>
                 </div>
               </div>
             </UCard>
 
-            <UCard variant="subtle" class="bg-secondary-50">
+            <UCard variant="subtle"
+                   class="bg-secondary-50">
               <div class="flex items-start gap-4">
-                <div class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
-                  <UIcon name="i-heroicons-document-text" class="w-5 h-5 text-white" />
+                <div
+                     class="shrink-0 w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
+                  <UIcon name="i-heroicons-document-text"
+                         class="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-secondary-900 mb-1">Preparation</h3>
+                  <h3 class="font-semibold text-secondary-900 mb-1">Preparation
+                  </h3>
                   <p class="text-secondary-600 text-sm">
-                    Come prepared with questions about your business goals, current challenges, and federal contracting interests.
+                    Come prepared with questions about your business goals,
+                    current
+                    challenges, and federal contracting interests.
                   </p>
                 </div>
               </div>
@@ -251,28 +303,27 @@
     </UPageSection>
 
     <!-- FAQ Section -->
-    <UPageSection 
-      class="bg-secondary-50" 
-      title="Frequently Asked Questions" 
-      :ui="{
-        title: 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-secondary-900 text-center'
-      }"
-    >
-      <div class="max-w-2xl w-full mx-auto space-y-4 font-semibold text-secondary-900">
+    <UPageSection class="bg-secondary-50"
+                  title="Frequently Asked Questions"
+                  :ui="{
+                    title: 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-secondary-900 text-center'
+                  }">
+      <div
+           class="max-w-2xl w-full mx-auto space-y-4 font-semibold text-secondary-900">
         <ClientOnly>
-          <UAccordion 
-            :items="faqItems" 
-            multiple
-            :unmount-on-hide="false"
-            class="w-full"
-            :ui="{
-              label: 'font-semibold',
-              content: 'font-light text-secondary-700 text-sm'
-            }"
-          />
+          <UAccordion :items="faqItems"
+                      multiple
+                      :unmount-on-hide="false"
+                      class="w-full"
+                      :ui="{
+                        label: 'font-semibold',
+                        content: 'font-light text-secondary-700 text-sm'
+                      }" />
           <template #fallback>
             <div class="space-y-2">
-              <div v-for="i in 4" :key="i" class="h-14 bg-gray-100 rounded animate-pulse"></div>
+              <div v-for="i in 4"
+                   :key="i"
+                   class="h-14 bg-gray-100 rounded animate-pulse"></div>
             </div>
           </template>
         </ClientOnly>
@@ -280,10 +331,8 @@
     </UPageSection>
 
     <!-- CTA Section -->
-    <CTA 
-      title="Need More Information?"
-      description="Explore our services and resources to learn more about federal contracting opportunities."      
-    />
+    <CTA title="Need More Information?"
+         description="Explore our services and resources to learn more about federal contracting opportunities." />
   </div>
 </template>
 
@@ -294,6 +343,17 @@ import { z } from 'zod'
 definePageMeta({
   title: 'Contact - True North Federal Solutions',
   description: 'Schedule a consultation with True North Federal Solutions for expert federal contracting guidance and support.'
+})
+
+// Load Calendly widget script after mount (client-only) so it can attach to the
+// inline widget div without causing SSR hydration mismatches.
+onMounted(() => {
+  const SRC = 'https://assets.calendly.com/assets/external/widget.js'
+  if (document.querySelector(`script[src="${SRC}"]`)) return
+  const s = document.createElement('script')
+  s.src = SRC
+  s.async = true
+  document.head.appendChild(s)
 })
 
 // Set head for SEO

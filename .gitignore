@@ -25,3 +25,5 @@ deployment-token.txt
 __azurite_db_*__.json
 __blobstorage__/
 __queuestorage__/
+
+**/*.lscache
