@@ -1,8 +1,39 @@
 {
   "files": [
     {
-      "name": "The Beginner Guide.pdf",
+      "name": "The Beginner Guide",
+      "description": "A comprehensive guide for beginners to understand the basics of government contracting.",
       "url": "/guides/The%20Beginner%20Guide.pdf"
+    },
+    {
+      "name": "Bid-No Bid Framework",
+      "description": "A framework to help businesses decide whether to bid on a government contract or not.",
+      "url": "/guides/TrueNorth_BidNoBid_Framework.pdf"
+    },
+    {
+      "name": "FAR Mistakes Guide",
+      "description": "A guide highlighting common mistakes made in relation to the Federal Acquisition Regulation (FAR).",
+      "url": "/guides/TrueNorth_FAR_Mistakes_Guide.pdf"
+    },
+    {
+      "name": "Government Contracts Guide",
+      "description": "A guide providing insights and best practices for navigating government contracts.",
+      "url": "/guides/TrueNorth_GovContracts_Guide.pdf"
+    },
+    {
+      "name": "Market Research Guide",
+      "description": "A guide to conducting effective market research for government contracting opportunities.",
+      "url": "/guides/TrueNorth_MarketResearch_Guide.pdf"
+    },
+    {
+      "name": "Proposal Writing Best Practices",
+      "description": "A guide outlining best practices for writing successful proposals for government contracts.",
+      "url": "/guides/TrueNorth_ProposalWriting_BestPractices.pdf"
+    },
+    {
+      "name": "SAM.gov Checklist",
+      "description": "A checklist to ensure compliance and readiness when using the System for Award Management (SAM.gov).",
+      "url": "/guides/TrueNorth_SAMgov_Checklist.pdf"
     }
   ]
 }
