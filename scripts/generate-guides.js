@@ -14,12 +14,34 @@ const path = require('path')
     if (!baseUrl.startsWith('/')) baseUrl = '/' + baseUrl
     if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/'
 
+    const outPath = path.join(guidesDir, 'index.json')
+
+    // Preserve any curated metadata (friendly name + description) from the existing
+    // index so regenerating doesn't wipe hand-written entries. Keyed by the PDF's
+    // filename (decoded last segment of its URL) so it matches files on disk.
+    const curated = new Map()
+    try {
+      const prev = JSON.parse(await fs.readFile(outPath, 'utf8'))
+      for (const entry of prev?.files || []) {
+        const fileName = decodeURIComponent((entry.url || '').split('/').pop() || '')
+        if (fileName) curated.set(fileName, entry)
+      }
+    } catch {
+      // No existing index (or unreadable) — start fresh.
+    }
+
     const pdfs = (files || [])
       .filter((f) => f.toLowerCase().endsWith('.pdf'))
-      .map((f) => ({ name: f, url: `${baseUrl}guides/${encodeURIComponent(f)}` }))
+      .map((f) => {
+        const meta = curated.get(f) || {}
+        return {
+          name: meta.name || f,
+          description: meta.description || '',
+          url: `${baseUrl}guides/${encodeURIComponent(f)}`
+        }
+      })
       .sort((a, b) => a.name.localeCompare(b.name))
 
-    const outPath = path.join(guidesDir, 'index.json')
     await fs.writeFile(outPath, JSON.stringify({ files: pdfs }, null, 2), 'utf8')
     console.log('Generated', outPath)
   } catch (err) {

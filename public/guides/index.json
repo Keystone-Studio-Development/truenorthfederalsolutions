@@ -1,11 +1,6 @@
 {
   "files": [
     {
-      "name": "The Beginner Guide",
-      "description": "A comprehensive guide for beginners to understand the basics of government contracting.",
-      "url": "/guides/The%20Beginner%20Guide.pdf"
-    },
-    {
       "name": "Bid-No Bid Framework",
       "description": "A framework to help businesses decide whether to bid on a government contract or not.",
       "url": "/guides/TrueNorth_BidNoBid_Framework.pdf"
@@ -34,6 +29,11 @@
       "name": "SAM.gov Checklist",
       "description": "A checklist to ensure compliance and readiness when using the System for Award Management (SAM.gov).",
       "url": "/guides/TrueNorth_SAMgov_Checklist.pdf"
+    },
+    {
+      "name": "The Beginner Guide",
+      "description": "A comprehensive guide for beginners to understand the basics of government contracting.",
+      "url": "/guides/The%20Beginner%20Guide.pdf"
     }
   ]
 }
