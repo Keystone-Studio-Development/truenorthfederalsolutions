@@ -21,7 +21,7 @@
       <!-- Calendly inline widget begin -->
       <ClientOnly>
         <div class="calendly-inline-widget"
-             data-url="https://calendly.com/truenorthfederalsolutions/30min"
+             data-url="https://calendly.com/truenorthfederalsolutions"
              style="min-width:320px;height:700px;">
         </div>
         <template #fallback>

@@ -17,7 +17,7 @@
                 <UIcon name="i-heroicons-envelope"
                        class="w-5 h-5" />
             </a>
-            <a href="tel:+1234567890"
+            <a href="tel:+12546778483"
                class="text-secondary-400 hover:text-primary-700 transition-colors"
                aria-label="Phone Contact">
                 <UIcon name="i-heroicons-phone"
